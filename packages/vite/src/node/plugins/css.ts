@@ -720,6 +720,7 @@ function createCSSResolvers(config: ResolvedConfig): CSSAtImportResolvers {
         (cssResolve = config.createResolver({
           extensions: ['.css'],
           mainFields: ['style'],
+          conditions: ['style'],
           tryIndex: false,
           preferRelative: true,
         }))
@@ -732,6 +733,7 @@ function createCSSResolvers(config: ResolvedConfig): CSSAtImportResolvers {
         (sassResolve = config.createResolver({
           extensions: ['.scss', '.sass', '.css'],
           mainFields: ['sass', 'style'],
+          conditions: ['sass', 'style'],
           tryIndex: true,
           tryPrefix: '_',
           preferRelative: true,
